@@ -1,6 +1,7 @@
 package com.beloghos.dev.maestro.UI;
 
 import javafx.scene.control.TreeItem;
+import javafx.scene.image.ImageView;
 
 import java.io.File;
 
@@ -10,6 +11,11 @@ public class FolderTreeItem extends TreeItem<String> {
 
     FolderTreeItem(String type, File file){
         super(type);
+        this.file = file;
+    }
+
+    FolderTreeItem(String type,File file, ImageView image){
+        super(type,image);
         this.file = file;
     }
 

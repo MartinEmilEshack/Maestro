@@ -17,6 +17,8 @@ public class Mainss extends Application {
 //        MainSceneController.setRootDirectories(FXCollections.observableArrayList(rootDirItem));
 //        rootDirItem = ResourceItem.createObservedPath(Paths.get("E:\\Beloghos"));
 
+
+
         FoldersTreeView folderTreeView = new FoldersTreeView("E:\\Beloghos");
 
         BorderPane borderPane = new BorderPane();

@@ -4,6 +4,8 @@ import java.io.File;
 
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class FoldersTreeView extends TreeView<String> {
 
@@ -15,14 +17,20 @@ public class FoldersTreeView extends TreeView<String> {
     private void getFoldersTreeView(String rootFolder) {
 
         File rootFile = new File(rootFolder);
-        FolderTreeItem root = new FolderTreeItem(rootFile.getName(),rootFile);
+
+        ImageView rootIcon = new ImageView(new Image(getClass().getResourceAsStream("LibraryIcon.png")));
+        rootIcon.setFitHeight(20);
+        rootIcon.setFitWidth(20);
+
+        FolderTreeItem root = new FolderTreeItem(rootFile.getName(),rootFile,rootIcon);
         root.getChildren().add(new TreeItem<>("DUMMY"));
 
         root.addEventHandler(FolderTreeItem.branchExpandedEvent(),
                 (FolderTreeItem.TreeModificationEvent<String> treeModificationEvent) -> {
                     FolderTreeItem folderItem = (FolderTreeItem) treeModificationEvent.getTreeItem();
                     folderItem.getChildren().clear();
-                    File[] files = folderItem.getFile().listFiles();
+                    File expandedRoot = folderItem.getFile();
+                    File[] files = expandedRoot.listFiles();
                     if (files != null)
                         for (File file : files) {
                             FolderTreeItem folder = new FolderTreeItem(file.getName(), file);
