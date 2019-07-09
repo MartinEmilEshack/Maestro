@@ -26,9 +26,10 @@ public class FoldersTreeView extends TreeView<String> {
                     if (files != null)
                         for (File file : files) {
                             FolderTreeItem folder = new FolderTreeItem(file.getName(), file);
-                            if(!file.isFile())
+                            if(!file.isFile()){
                                 folder.getChildren().add(new TreeItem<>("DUMMY"));
-                            folderItem.getChildren().add(folder);
+                                folderItem.getChildren().add(folder);
+                            }
                         }
                 }
         );
