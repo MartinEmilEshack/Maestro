@@ -1,6 +1,8 @@
 package com.beloghos.dev.maestro;
 
+import com.beloghos.dev.maestro.UI.FolderSelectedEvent;
 import com.beloghos.dev.maestro.UI.FoldersTreeView;
+import com.beloghos.dev.maestro.UI.UriField;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -17,12 +19,15 @@ public class Mainss extends Application {
 //        MainSceneController.setRootDirectories(FXCollections.observableArrayList(rootDirItem));
 //        rootDirItem = ResourceItem.createObservedPath(Paths.get("E:\\Beloghos"));
 
-
-
         FoldersTreeView folderTreeView = new FoldersTreeView("E:\\Beloghos");
+        UriField uri = new UriField("E:\\Beloghos");
 
         BorderPane borderPane = new BorderPane();
         borderPane.setLeft(folderTreeView);
+        borderPane.setTop(uri);
+        borderPane.addEventHandler(FolderSelectedEvent.FOLDER_SELECTED_TYPE,(openFolderEvent)->{
+            uri.setText(openFolderEvent.getFolderPath());
+        });
 
         Scene scene = new Scene(borderPane, 1000, 700);
 

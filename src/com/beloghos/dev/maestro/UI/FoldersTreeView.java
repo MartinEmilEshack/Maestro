@@ -6,6 +6,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 
 public class FoldersTreeView extends TreeView<String> {
 
@@ -35,7 +36,9 @@ public class FoldersTreeView extends TreeView<String> {
                         for (File file : files) {
                             FolderTreeItem folder = new FolderTreeItem(file.getName(), file);
                             if(!file.isFile()){
-                                folder.getChildren().add(new TreeItem<>("DUMMY"));
+                                File[] filteredFiles = file.listFiles(pathname -> !pathname.isFile());
+                                if(filteredFiles != null && filteredFiles.length != 0)
+                                    folder.getChildren().add(new TreeItem<>("DUMMY"));
                                 folderItem.getChildren().add(folder);
                             }
                         }
@@ -47,10 +50,25 @@ public class FoldersTreeView extends TreeView<String> {
                     FolderTreeItem folderItem = (FolderTreeItem) treeModificationEvent.getTreeItem();
                     folderItem.getChildren().clear();
                     File file = folderItem.getFile();
-                    if (!file.isFile())
-                        folderItem.getChildren().add(new TreeItem<>("DUMMY"));
+                    File[] filteredFiles = file.listFiles(pathname -> !pathname.isFile());
+                    if (!file.isFile() && filteredFiles != null && filteredFiles.length != 0)
+                            folderItem.getChildren().add(new TreeItem<>("DUMMY"));
                 }
         );
+
+        this.setOnMouseClicked((mouseEvent -> {
+            FolderTreeItem item = (FolderTreeItem) this.getSelectionModel().getSelectedItem();
+//            System.out.println(item);
+            folderPicked(item);
+        }));
+
+        this.setOnKeyReleased(keyEvent -> {
+            if(keyEvent.getCode() == KeyCode.ENTER){
+                FolderTreeItem item = (FolderTreeItem) this.getSelectionModel().getSelectedItem();
+//                System.out.println(item);
+                folderPicked(item);
+            }
+        });
 
         super.setShowRoot(true);
         super.setRoot(root);
@@ -61,6 +79,11 @@ public class FoldersTreeView extends TreeView<String> {
 
 //        return folderTreeView;
 
+    }
+
+    private void folderPicked(FolderTreeItem item){
+        if(item != null)
+            this.fireEvent(new FolderSelectedEvent(item,this,FolderSelectedEvent.FOLDER_SELECTED_TYPE,item.getFile().getPath()));
     }
 
 }
