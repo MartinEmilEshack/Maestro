@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.UI;
+package com.beloghos.dev.maestro.UserInterface;
 
 import javafx.scene.control.TextField;
 
@@ -14,11 +14,11 @@ public class UriField extends TextField {
         this.uri = uri;
         setText(uri);
         textProperty().addListener((observableValue,s,t1) -> {
-            System.out.println("textfield changed from " + s + " to " + t1);
+            System.out.println("textField changed from " + s + " to " + t1);
         });
-        addEventFilter(FolderSelectedEvent.FOLDER_SELECTED_TYPE, (folderSelectedEvent)->{
-            setText(folderSelectedEvent.getFolderPath());
-        });
+//        addEventFilter(FolderSelectedEvent.FOLDER_SELECTED_TYPE, (folderSelectedEvent)->{
+//            setText(folderSelectedEvent.getFolderPath());
+//        });
     }
 
     public File getFolder(){

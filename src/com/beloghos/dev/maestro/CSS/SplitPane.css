@@ -1,6 +1,5 @@
 /*  custom properties of the SplitPane */
-
 .split-pane > .split-pane-divider {
     -fx-padding: 0 2 0 2;
-    -fx-box-border: #ffffff00;
+    -fx-box-border: transparent;
 }

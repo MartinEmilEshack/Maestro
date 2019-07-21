@@ -12,5 +12,6 @@
     <orderEntry type="library" name="artifacts" level="project" />
     <orderEntry type="library" name="content" level="project" />
     <orderEntry type="library" name="features" level="project" />
+    <orderEntry type="library" name="JIconExtract" level="project" />
   </component>
 </module>
