@@ -7,6 +7,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 
@@ -18,14 +19,21 @@ public class FilesStackPane extends StackPane {
 
     public FilesStackPane(String pathname){
         super();
+
         tilePane = new TilePane();
         tilePane.setOrientation(Orientation.HORIZONTAL);
         tilePane.setVgap(10);
         tilePane.setHgap(10);
         tilePane.setTileAlignment(Pos.TOP_LEFT);
         tilePane.setPadding(new Insets(20,20,20,20));
+
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.setFitToHeight(true);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setContent(tilePane);
+
         setAlignment(Pos.TOP_LEFT);
-        getChildren().add(tilePane);
+        getChildren().add(scrollPane);
         setFiles(pathname);
     }
 

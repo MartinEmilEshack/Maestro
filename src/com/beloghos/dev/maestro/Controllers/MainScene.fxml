@@ -77,7 +77,11 @@
          </content></Tab>
     <Tab text="Untitled Tab 2">
          <content>
-            <ListView prefHeight="200.0" prefWidth="200.0" />
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <ListView prefHeight="254.0" prefWidth="865.0" BorderPane.alignment="CENTER" />
+               </top>
+            </BorderPane>
          </content></Tab>
       <Tab text="Untitled Tab" />
       <Tab text="Untitled Tab">
