@@ -35,7 +35,7 @@ public class Mainss extends Application {
         }
 
         FoldersTreeView folderTreeView = new FoldersTreeView(ROOT_PATH);
-        UriField uri = new UriField(ROOT_PATH);
+        ExplorerTools explorerTools = new ExplorerTools(ROOT_PATH);
         FilesStackPane stackPane = new FilesStackPane(ROOT_PATH);
 
         SplitPane splitPane = new SplitPane(stackPane,new ListView<>(FXCollections.observableList(dummyList)));
@@ -44,13 +44,21 @@ public class Mainss extends Application {
 
         BorderPane borderPane = new BorderPane();
         borderPane.setLeft(folderTreeView);
-        borderPane.setTop(uri);
+        borderPane.setTop(explorerTools);
         borderPane.setCenter(splitPane);
-        borderPane.addEventHandler(FolderSelectedEvent.FOLDER_SELECTED_TYPE,(openFolderEvent)->{
-            if(!uri.getText().equals(openFolderEvent.getFolderPath())){
-                uri.setText(openFolderEvent.getFolderPath());
-                stackPane.setFiles(openFolderEvent.getFolderPath());
+        borderPane.addEventHandler(FolderSelectedEvent.FOLDER_SELECTED,(openFolderEvent)->{
+            switch (openFolderEvent.getEventType().getName()){
+                case "PREVIOUS_FOLDER_SELECTED": explorerTools.setPreviousUriPath(openFolderEvent.getFolderPath());break;
+                case "NEXT_FOLDER_SELECTED": explorerTools.setNextUriPath(openFolderEvent.getFolderPath());break;
+                case "PARENT_FOLDER_SELECTED": explorerTools.setParentFolder(openFolderEvent.getFolderPath());break;
+                default:
+                    if(!explorerTools.getUriText().equals(openFolderEvent.getFolderPath())){
+                        stackPane.setFiles(openFolderEvent.getFolderPath());
+                        explorerTools.setNewText(openFolderEvent.getFolderPath());
+                        return;
+                    }
             }
+            stackPane.setFiles(explorerTools.getUriText());
         });
 
         Scene scene = new Scene(borderPane, 1000, 700);

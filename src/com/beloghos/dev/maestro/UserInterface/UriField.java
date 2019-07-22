@@ -9,15 +9,15 @@ public class UriField extends TextField {
 
     private String uri;
 
-    public UriField(String uri){
+    UriField(String uri){
         super(uri);
-        this.uri = uri;
+//        this.uri = uri;
         setText(uri);
-        textProperty().addListener((observableValue,s,t1) -> {
-            System.out.println("textField changed from " + s + " to " + t1);
-        });
-//        addEventFilter(FolderSelectedEvent.FOLDER_SELECTED_TYPE, (folderSelectedEvent)->{
-//            setText(folderSelectedEvent.getFolderPath());
+//        textProperty().addListener((observableValue,s,t1) -> {
+//            System.out.println("textField changed from " + s + " to " + t1);
+//        });
+//        addEventFilter(FolderSelectedEvent.FOLDER_SELECTED, (folderSelectedEvent)->{
+//            setNewText(folderSelectedEvent.getFolderPath());
 //        });
     }
 

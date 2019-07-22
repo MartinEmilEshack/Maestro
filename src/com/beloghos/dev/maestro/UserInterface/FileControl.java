@@ -36,7 +36,7 @@ class FileControl extends VBox {
                         .otherwise(unfocusedBackground));
         setOnMouseClicked(mouseEvent -> {
             if(mouseEvent.getClickCount() == 2 && (!getFile().isFile()))
-                this.fireEvent(new FolderSelectedEvent(this,this,FolderSelectedEvent.FOLDER_SELECTED_TYPE,getFile().getPath()));
+                this.fireEvent(new FolderSelectedEvent(this,this,FolderSelectedEvent.FOLDER_SELECTED,getFile().getPath()));
             else
                 this.requestFocus();
         });
@@ -53,7 +53,7 @@ class FileControl extends VBox {
         name.maxWidth(FileControl.USE_COMPUTED_SIZE);
         name.prefWidth(FileControl.USE_COMPUTED_SIZE);
         name.setTextOverrun(OverrunStyle.ELLIPSIS);
-        name.setEllipsisString("...");
+        name.setEllipsisString("..." + getFileExtension(file.getName()));
 
         getChildren().addAll(icon,name);
         this.file = file;
@@ -88,6 +88,14 @@ class FileControl extends VBox {
 
     private File getFile() {
         return file;
+    }
+
+    private String getFileExtension(String name){
+        int dotIndex = name.lastIndexOf(".");
+        if(dotIndex == -1)
+            return "";
+        else
+            return name.substring(dotIndex);
     }
 
 }

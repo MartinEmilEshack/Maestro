@@ -2,6 +2,7 @@ package com.beloghos.dev.maestro.UserInterface;
 
 import java.io.File;
 
+import com.beloghos.dev.maestro.ImageSources.ImageURIs;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
@@ -19,7 +20,7 @@ public class FoldersTreeView extends TreeView<String> {
 
         File rootFile = new File(rootFolder);
 
-        ImageView rootIcon = new ImageView(new Image(getClass().getResourceAsStream("LibraryIcon.png")));
+        ImageView rootIcon = new ImageView(new Image(ImageURIs.LibraryMusicFolderIcon));
         rootIcon.setFitHeight(20);
         rootIcon.setFitWidth(20);
 
@@ -83,7 +84,7 @@ public class FoldersTreeView extends TreeView<String> {
 
     private void folderPicked(FolderTreeItem item){
         if(item != null)
-            this.fireEvent(new FolderSelectedEvent(item,this,FolderSelectedEvent.FOLDER_SELECTED_TYPE,item.getFile().getPath()));
+            this.fireEvent(new FolderSelectedEvent(item,this,FolderSelectedEvent.FOLDER_SELECTED,item.getFile().getPath()));
     }
 
 }
