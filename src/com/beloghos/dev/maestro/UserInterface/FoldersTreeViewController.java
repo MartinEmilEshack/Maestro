@@ -1,19 +1,38 @@
-package com.beloghos.dev.maestro.UserInterface;
+package com.beloghos.dev.maestro.userInterface;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import com.beloghos.dev.maestro.ImageSources.ImageURIs;
+import com.beloghos.dev.maestro.Main;
+
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 
-public class FoldersTreeView extends TreeView<String> {
+public class FoldersTreeViewController extends TreeView<String> implements Initializable {
 
-    public FoldersTreeView(String path){
-        super();
-        getFoldersTreeView(path);
+    public FoldersTreeViewController(){
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FoldersTreeView.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+        fxmlLoader.setClassLoader(getClass().getClassLoader());
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        getFoldersTreeView(Main.MEMORY.getURI().getPath());
     }
 
     private void getFoldersTreeView(String rootFolder) {
@@ -60,14 +79,17 @@ public class FoldersTreeView extends TreeView<String> {
         this.setOnMouseClicked((mouseEvent -> {
             FolderTreeItem item = (FolderTreeItem) this.getSelectionModel().getSelectedItem();
 //            System.out.println(item);
-            folderPicked(item);
+//            folderPicked(item);
+            if(item != null)
+                Main.MEMORY.getURI().setPath(item.getFile().getPath());
         }));
 
         this.setOnKeyReleased(keyEvent -> {
             if(keyEvent.getCode() == KeyCode.ENTER){
                 FolderTreeItem item = (FolderTreeItem) this.getSelectionModel().getSelectedItem();
 //                System.out.println(item);
-                folderPicked(item);
+//                folderPicked(item);
+                Main.MEMORY.getURI().getPathProperty().setValue(item.getFile().getPath());
             }
         });
 
@@ -82,9 +104,9 @@ public class FoldersTreeView extends TreeView<String> {
 
     }
 
-    private void folderPicked(FolderTreeItem item){
-        if(item != null)
-            this.fireEvent(new FolderSelectedEvent(item,this,FolderSelectedEvent.FOLDER_SELECTED,item.getFile().getPath()));
-    }
+//    private void folderPicked(FolderTreeItem item){
+//        if(item != null)
+//            this.fireEvent(new FolderSelectedEvent(item,this,FolderSelectedEvent.FOLDER_SELECTED,item.getFile().getPath()));
+//    }
 
 }

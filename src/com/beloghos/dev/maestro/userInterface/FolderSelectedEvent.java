@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.UserInterface;
+package com.beloghos.dev.maestro.userInterface;
 
 import javafx.event.Event;
 import javafx.event.EventTarget;

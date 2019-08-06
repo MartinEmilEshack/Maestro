@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.StackPane?>
+
+<fx:root alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" type="javafx.scene.layout.StackPane" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TableView fx:id="tracksTable" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="trackNameColumn" prefWidth="117.0" text="Name" />
+                <TableColumn fx:id="trackArtistColumn" prefWidth="103.0" text="Artist" />
+                <TableColumn fx:id="trackRateColumn" prefWidth="75.0" text="Rate" />
+            </columns>
+        </TableView>
+    </children>
+</fx:root>

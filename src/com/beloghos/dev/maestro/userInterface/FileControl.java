@@ -1,5 +1,6 @@
-package com.beloghos.dev.maestro.UserInterface;
+package com.beloghos.dev.maestro.userInterface;
 
+import com.beloghos.dev.maestro.Main;
 import javafx.beans.binding.Bindings;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.Insets;
@@ -17,11 +18,11 @@ import me.marnic.jiconextract.extractor.JIconExtractor;
 
 import java.io.File;
 
-class FileControl extends VBox {
+public class FileControl extends VBox {
 
     private File file;
 
-    FileControl(File file){
+    public FileControl(File file){
         super(10);
 
         Background focusBackground = new Background( new BackgroundFill( Color.SKYBLUE,new CornerRadii(2), Insets.EMPTY ) );
@@ -36,7 +37,8 @@ class FileControl extends VBox {
                         .otherwise(unfocusedBackground));
         setOnMouseClicked(mouseEvent -> {
             if(mouseEvent.getClickCount() == 2 && (!getFile().isFile()))
-                this.fireEvent(new FolderSelectedEvent(this,this,FolderSelectedEvent.FOLDER_SELECTED,getFile().getPath()));
+                Main.MEMORY.getURI().setPath(getFile().getPath());
+//                this.fireEvent(new FolderSelectedEvent(this,this,FolderSelectedEvent.FOLDER_SELECTED,getFile().getPath()));
             else
                 this.requestFocus();
         });

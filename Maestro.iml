@@ -13,5 +13,7 @@
     <orderEntry type="library" name="content" level="project" />
     <orderEntry type="library" name="features" level="project" />
     <orderEntry type="library" name="JIconExtract" level="project" />
+    <orderEntry type="library" name="jaudiotagger" level="project" />
+    <orderEntry type="library" name="sqlite-jdbc" level="project" />
   </component>
 </module>

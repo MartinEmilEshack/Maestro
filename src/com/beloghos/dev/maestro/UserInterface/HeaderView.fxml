@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root alignment="TOP_LEFT" type="javafx.scene.layout.StackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <MenuBar fx:id="topMenuBar">
+        <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" text="Close" />
+        </Menu>
+        <Menu fx:id="editMenu" mnemonicParsing="false" text="Edit">
+            <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" text="Delete" />
+        </Menu>
+        <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
+            <items>
+                <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+            </items>
+        </Menu>
+    </MenuBar>
+    <HBox fx:id="radioButtonHBox" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" spacing="10.0" StackPane.alignment="CENTER">
+        <children>
+            <RadioButton fx:id="explorerViewRadioButtton" mnemonicParsing="false" selected="true">
+                <toggleGroup>
+                    <ToggleGroup fx:id="viewToggleButtons" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="templateViewRadioButtton" mnemonicParsing="false" toggleGroup="$viewToggleButtons" />
+            <RadioButton fx:id="statisticsViewRadioButtton" mnemonicParsing="false" toggleGroup="$viewToggleButtons" />
+        </children>
+    </HBox>
+    <VBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" StackPane.alignment="BOTTOM_RIGHT">
+        <HBox fx:id="tracksEditingLabelHBox" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" spacing="3.0">
+            <Label fx:id="tracksDoneProgressPercent" />
+            <Label fx:id="tracksTodoProgressPercent" text="Label" />
+        </HBox>
+        <ProgressBar fx:id="fileReadingProgressBar" prefHeight="3.0" progress="0.0" stylesheets="@../CSS/ProgressBar.css" />
+      <StackPane.margin>
+         <Insets right="5.0" />
+      </StackPane.margin>
+    </VBox>
+</fx:root>
