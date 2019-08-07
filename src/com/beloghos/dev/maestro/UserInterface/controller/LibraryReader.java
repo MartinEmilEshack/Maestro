@@ -86,7 +86,7 @@ public class LibraryReader {
         return task.progressProperty();
     }
 
-    public ReadOnlyStringProperty filesReadProgress() {
+    public ReadOnlyStringProperty filesFoundProgress() {
         return task.messageProperty();
     }
 

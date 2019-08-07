@@ -35,7 +35,7 @@ public class HeaderViewController extends StackPane implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         LibraryReader reader = new LibraryReader();
         fileReadingProgressBar.progressProperty().bind(reader.readProgress());
-        tracksDoneProgressPercent.textProperty().bind(reader.filesReadProgress());
+        tracksDoneProgressPercent.textProperty().bind(reader.filesFoundProgress());
         reader.whenFinishedDo(() -> {
             System.out.println("Finished reading directory");
             Platform.runLater(() -> {
