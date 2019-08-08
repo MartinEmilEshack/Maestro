@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.userInterface.view;
+package com.beloghos.dev.maestro.ui.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

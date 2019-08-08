@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.userInterface;
+package com.beloghos.dev.maestro.ui.view;
 
 import com.beloghos.dev.maestro.Main;
 import javafx.fxml.FXML;
@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ExplorerTools extends HBox implements Initializable {
+public class ExplorerToolsView extends HBox implements Initializable {
 
     @FXML private TextField uriTextField;
     @FXML private Button backButton;
@@ -21,7 +21,7 @@ public class ExplorerTools extends HBox implements Initializable {
     @FXML private Button upOneFolderButton;
     private ArrayList<String> stack;
 
-    public ExplorerTools(){
+    public ExplorerToolsView(){
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ExplorerToolsView.fxml"));
         fxmlLoader.setRoot(this);
@@ -35,7 +35,7 @@ public class ExplorerTools extends HBox implements Initializable {
 
     }
 
-//    public ExplorerTools(String uriPath){
+//    public ExplorerToolsView(String uriPath){
 //
 //        uriTextField = new TextField(uriPath);
 //        uriTextField.prefWidthProperty().bind(widthProperty());

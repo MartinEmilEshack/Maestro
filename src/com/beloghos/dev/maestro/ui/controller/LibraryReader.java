@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.userInterface.controller;
+package com.beloghos.dev.maestro.ui.controller;
 
 import com.beloghos.dev.maestro.Job.Task;
 import com.beloghos.dev.maestro.Main;

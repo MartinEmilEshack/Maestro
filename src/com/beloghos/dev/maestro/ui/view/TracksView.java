@@ -1,8 +1,8 @@
-package com.beloghos.dev.maestro.userInterface.view;
+package com.beloghos.dev.maestro.ui.view;
 
 import com.beloghos.dev.maestro.Job.Task;
 import com.beloghos.dev.maestro.Main;
-import com.beloghos.dev.maestro.userInterface.model.Track;
+import com.beloghos.dev.maestro.ui.model.Track;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TracksViewControl extends StackPane implements Initializable {
+public class TracksView extends StackPane implements Initializable {
 
     @FXML private TableView<Track> tracksTable;
     @FXML private TableColumn<Track,String> trackNameColumn;
@@ -29,7 +29,7 @@ public class TracksViewControl extends StackPane implements Initializable {
 //    private TableView<TrackControl> trackListView;
 //    private boolean showAllTracks = false;
 //
-//    public TracksViewControl(String pathName){
+//    public TracksView(String pathName){
 //        super();
 //
 //        trackList = FXCollections.observableList(new ArrayList<>());
@@ -46,7 +46,7 @@ public class TracksViewControl extends StackPane implements Initializable {
 //        showDirectoryContent(pathName);
 //    }
 
-    public TracksViewControl(){
+    public TracksView(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TracksView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

@@ -1,9 +1,9 @@
-package com.beloghos.dev.maestro.userInterface.model;
+package com.beloghos.dev.maestro.ui.model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class Memorey {
+public class Memory {
 
     private final UriPath URI = new UriPath();
     private final ObservableList<Track> trackList = FXCollections.observableArrayList();
@@ -15,7 +15,6 @@ public class Memorey {
     public ObservableList<Track> getTrackList() {
         return trackList;
     }
-
 
 
 }

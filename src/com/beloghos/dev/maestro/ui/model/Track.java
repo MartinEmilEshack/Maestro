@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.userInterface.model;
+package com.beloghos.dev.maestro.ui.model;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

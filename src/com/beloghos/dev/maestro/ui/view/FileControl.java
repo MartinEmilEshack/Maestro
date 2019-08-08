@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.userInterface.view;
+package com.beloghos.dev.maestro.ui.view;
 
 import com.beloghos.dev.maestro.Main;
 import javafx.beans.binding.Bindings;

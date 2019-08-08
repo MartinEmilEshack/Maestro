@@ -1,7 +1,7 @@
-package com.beloghos.dev.maestro.userInterface.view;
+package com.beloghos.dev.maestro.ui.view;
 
 import com.beloghos.dev.maestro.Main;
-import com.beloghos.dev.maestro.userInterface.controller.LibraryReader;
+import com.beloghos.dev.maestro.ui.controller.LibraryReader;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,12 +14,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HeaderViewController extends StackPane implements Initializable {
+public class HeaderView extends StackPane implements Initializable {
 
     @FXML private ProgressBar fileReadingProgressBar;
     @FXML private Label tracksDoneProgressPercent;
 
-    public HeaderViewController(){
+    public HeaderView(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HeaderView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

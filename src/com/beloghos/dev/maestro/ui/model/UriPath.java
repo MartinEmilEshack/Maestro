@@ -1,14 +1,15 @@
-package com.beloghos.dev.maestro.UserInterface.Model;
+package com.beloghos.dev.maestro.ui.model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class LibraryFolder {
+public class UriPath {
 
+    private final String rootFolder = "E:\\Beloghos";
     private StringProperty path;
 
-    public LibraryFolder(String path){
-        this.path = new SimpleStringProperty(path);
+    public UriPath(){
+        this.path = new SimpleStringProperty(rootFolder);
     }
 
     public String getPath() {
@@ -25,6 +26,10 @@ public class LibraryFolder {
 
     public void setPathProperty(StringProperty path){
         this.path = path;
+    }
+
+    public String getRootFolder() {
+        return rootFolder;
     }
 
 }

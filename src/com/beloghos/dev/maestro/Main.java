@@ -2,8 +2,7 @@ package com.beloghos.dev.maestro;
 
 import com.beloghos.dev.maestro.Job.Worker;
 
-import com.beloghos.dev.maestro.userInterface.model.Memory;
-import com.beloghos.dev.maestro.userInterface.view.MainSceneController;
+import com.beloghos.dev.maestro.ui.model.Memory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -34,10 +33,10 @@ public class Main extends Application {
 //            i--;
 //        }
 //
-//        FoldersTreeViewController folderTreeView = new FoldersTreeViewController(URI_PATH);
-//        ExplorerTools explorerTools = new ExplorerTools(URI_PATH);
+//        FoldersTreeView folderTreeView = new FoldersTreeView(URI_PATH);
+//        ExplorerToolsView explorerTools = new ExplorerToolsView(URI_PATH);
 //        FoldersView stackPane = new FoldersView(URI_PATH);
-//        TracksViewControl trackListView = new TracksViewControl(URI_PATH);
+//        TracksView trackListView = new TracksView(URI_PATH);
 //
 //
 ////        SplitPane splitPane = new SplitPane(stackPane,new ListView<>(FXCollections.observableList(dummyList)));
@@ -75,7 +74,7 @@ public class Main extends Application {
 
         try {
             // Load root layout from fxml file.
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("userInterface/view/MainScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ui/view/MainScene.fxml"));
             BorderPane main  = loader.load();
             // Show the scene containing the root layout.
             Scene scene = new Scene(main);

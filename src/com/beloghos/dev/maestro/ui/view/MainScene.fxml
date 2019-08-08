@@ -25,14 +25,14 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<?import com.beloghos.dev.maestro.userInterface.view.TracksViewControl?>
-<?import com.beloghos.dev.maestro.userInterface.view.FoldersView?>
-<?import com.beloghos.dev.maestro.userInterface.view.FoldersTreeViewController?>
-<?import com.beloghos.dev.maestro.userInterface.view.ExplorerTools?>
-<?import com.beloghos.dev.maestro.userInterface.view.HeaderViewController?>
-<BorderPane fx:id="mainBorderPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beloghos.dev.maestro.userInterface.view.MainSceneController">
+<?import com.beloghos.dev.maestro.ui.view.TracksView?>
+<?import com.beloghos.dev.maestro.ui.view.FoldersView?>
+<?import com.beloghos.dev.maestro.ui.view.FoldersTreeView?>
+<?import com.beloghos.dev.maestro.ui.view.ExplorerToolsView?>
+<?import com.beloghos.dev.maestro.ui.view.HeaderView?>
+<BorderPane fx:id="mainBorderPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beloghos.dev.maestro.ui.view.MainSceneController">
    <top>
-       <HeaderViewController BorderPane.alignment="CENTER"/>
+       <HeaderView BorderPane.alignment="CENTER"/>
 <!--      <StackPane fx:id="topStack" alignment="TOP_LEFT" BorderPane.alignment="CENTER">-->
 <!--         <children>-->
 <!--            <MenuBar fx:id="topMenuBar">-->
@@ -82,7 +82,7 @@
    <center>
       <VBox fx:id="centerVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" BorderPane.alignment="TOP_CENTER">
          <children>
-            <ExplorerTools/>
+            <ExplorerToolsView/>
 <!--            <HBox fx:id="explorerToolsHBox" alignment="CENTER_LEFT" prefHeight="3.0" prefWidth="600.0" spacing="5.0">-->
 <!--               <children>-->
 <!--                  <Button fx:id="backButton" disable="true" mnemonicParsing="false" stylesheets="@../../CSS/ExplorerButton.css" HBox.hgrow="NEVER">-->
@@ -137,7 +137,7 @@
 <!--            </HBox>-->
             <SplitPane fx:id="mainCenterSplitPane" dividerPositions="0.017, 0.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../CSS/SplitPane.css" VBox.vgrow="ALWAYS">
                <items>
-                  <FoldersTreeViewController prefHeight="400.0" prefWidth="600.0"/>
+                  <FoldersTreeView prefHeight="400.0" prefWidth="600.0"/>
 <!--                  <TreeView prefHeight="400.0" prefWidth="600.0" />-->
                   <SplitPane fx:id="folderAndTrackSplitPane" dividerPositions="0.43103448275862066" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" stylesheets="@../../CSS/SplitPane.css">
                      <items>
@@ -154,7 +154,7 @@
 <!--                              </ScrollPane>-->
 <!--                           </children>-->
 <!--                        </StackPane>-->
-                        <TracksViewControl/>
+                        <TracksView/>
 <!--                        <StackPane fx:id="tracksStackPane" prefHeight="150.0" prefWidth="200.0">-->
 <!--                           <children>-->
 <!--                              <TableView fx:id="tracksTable" prefHeight="200.0" prefWidth="200.0">-->

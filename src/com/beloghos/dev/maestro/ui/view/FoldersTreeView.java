@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.userInterface;
+package com.beloghos.dev.maestro.ui.view;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,9 +16,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 
-public class FoldersTreeViewController extends TreeView<String> implements Initializable {
+public class FoldersTreeView extends TreeView<String> implements Initializable {
 
-    public FoldersTreeViewController(){
+    public FoldersTreeView(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FoldersTreeView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
