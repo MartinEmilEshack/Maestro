@@ -1,9 +1,4 @@
-package com.beloghos.dev.maestro.Controllers;
-
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import org.eclipse.fx.ui.controls.filesystem.DirItem;
-import org.eclipse.fx.ui.controls.filesystem.DirectoryTreeView;
+package com.beloghos.dev.maestro.Old;
 
 public class MainSceneController {
 

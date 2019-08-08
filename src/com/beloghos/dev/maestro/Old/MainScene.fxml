@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import org.eclipse.fx.ui.controls.filesystem.DirectoryView?>
 
-<TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="865.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beloghos.dev.maestro.Controllers.MainSceneController">
+<TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="865.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beloghos.dev.maestro.Old.MainSceneController">
   <tabs>
     <Tab text="Untitled Tab 1">
          <content>

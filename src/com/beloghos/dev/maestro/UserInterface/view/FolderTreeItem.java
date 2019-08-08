@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.userInterface;
+package com.beloghos.dev.maestro.userInterface.view;
 
 import javafx.scene.control.TreeItem;
 import javafx.scene.image.ImageView;

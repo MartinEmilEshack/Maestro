@@ -20,7 +20,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-//        Parent root = FXMLLoader.load(getClass().getResource("Controllers/MainScene.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("Old/MainScene.fxml"));
 //        MainSceneController.setRootDirectories(FXCollections.observableArrayList(rootDirItem));
 //        rootDirItem = ResourceItem.createObservedPath(Paths.get("E:\\Beloghos"));
 
@@ -36,7 +36,7 @@ public class Main extends Application {
 //
 //        FoldersTreeViewController folderTreeView = new FoldersTreeViewController(URI_PATH);
 //        ExplorerTools explorerTools = new ExplorerTools(URI_PATH);
-//        FilesStackPane stackPane = new FilesStackPane(URI_PATH);
+//        FoldersView stackPane = new FoldersView(URI_PATH);
 //        TracksViewControl trackListView = new TracksViewControl(URI_PATH);
 //
 //

@@ -1,4 +1,4 @@
-package com.beloghos.dev.maestro.UserInterface;
+package com.beloghos.dev.maestro.Old;
 
 import javafx.scene.control.TextField;
 

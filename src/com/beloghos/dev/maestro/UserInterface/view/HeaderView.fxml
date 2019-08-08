@@ -42,7 +42,7 @@
             <Label fx:id="tracksDoneProgressPercent" />
             <Label fx:id="tracksTodoProgressPercent" text="Label" />
         </HBox>
-        <ProgressBar fx:id="fileReadingProgressBar" prefHeight="3.0" progress="0.0" stylesheets="@../CSS/ProgressBar.css" />
+        <ProgressBar fx:id="fileReadingProgressBar" prefHeight="3.0" progress="0.0" stylesheets="@../../CSS/ProgressBar.css" />
       <StackPane.margin>
          <Insets right="5.0" />
       </StackPane.margin>

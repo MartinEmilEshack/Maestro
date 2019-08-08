@@ -25,11 +25,11 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<?import com.beloghos.dev.maestro.userInterface.TracksViewControl?>
-<?import com.beloghos.dev.maestro.userInterface.FilesStackPane?>
-<?import com.beloghos.dev.maestro.userInterface.FoldersTreeViewController?>
-<?import com.beloghos.dev.maestro.userInterface.ExplorerTools?>
-<?import com.beloghos.dev.maestro.userInterface.HeaderViewController?>
+<?import com.beloghos.dev.maestro.userInterface.view.TracksViewControl?>
+<?import com.beloghos.dev.maestro.userInterface.view.FoldersView?>
+<?import com.beloghos.dev.maestro.userInterface.view.FoldersTreeViewController?>
+<?import com.beloghos.dev.maestro.userInterface.view.ExplorerTools?>
+<?import com.beloghos.dev.maestro.userInterface.view.HeaderViewController?>
 <BorderPane fx:id="mainBorderPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.beloghos.dev.maestro.userInterface.view.MainSceneController">
    <top>
        <HeaderViewController BorderPane.alignment="CENTER"/>
@@ -141,7 +141,7 @@
 <!--                  <TreeView prefHeight="400.0" prefWidth="600.0" />-->
                   <SplitPane fx:id="folderAndTrackSplitPane" dividerPositions="0.43103448275862066" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" stylesheets="@../../CSS/SplitPane.css">
                      <items>
-                        <FilesStackPane/>
+                        <FoldersView/>
 <!--                        <StackPane fx:id="foldersStackPane" alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0">-->
 <!--                           <children>-->
 <!--                              <ScrollPane fx:id="foldersScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0">-->
