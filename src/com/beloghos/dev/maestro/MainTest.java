@@ -1,23 +1,13 @@
 package com.beloghos.dev.maestro;
 
-import com.beloghos.dev.maestro.Database.DatabaseManager;
-import com.beloghos.dev.maestro.Database.TracksTable;
+import com.beloghos.dev.maestro.Database.DatabaseManagerOLD;
 import org.jaudiotagger.audio.AudioFile;
-import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.audio.AudioHeader;
-import org.jaudiotagger.audio.exceptions.CannotReadException;
 import org.jaudiotagger.audio.exceptions.CannotWriteException;
-import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
-import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.tag.FieldDataInvalidException;
-import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
-import org.jaudiotagger.tag.TagException;
 import org.jaudiotagger.tag.id3.*;
 import org.jaudiotagger.tag.id3.framebody.FrameBodyTXXX;
 
-import java.io.File;
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class MainTest {
@@ -26,13 +16,14 @@ public class MainTest {
 
     public static void main(String[] args){
 
+        DatabaseManagerOLD dbManager = null;
         try {
-            DatabaseManager dbManager = new DatabaseManager();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+            dbManager = new DatabaseManagerOLD();
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+        if(dbManager!= null)
+            dbManager.close();
 
 //        try {
 //

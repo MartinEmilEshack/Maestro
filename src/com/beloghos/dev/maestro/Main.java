@@ -1,5 +1,7 @@
 package com.beloghos.dev.maestro;
 
+import com.beloghos.dev.maestro.Database.DataBaseManager;
+import com.beloghos.dev.maestro.Database.TableIO;
 import com.beloghos.dev.maestro.Job.Worker;
 
 import com.beloghos.dev.maestro.ui.model.Memory;
@@ -72,10 +74,12 @@ public class Main extends Application {
 //        primaryStage.setScene(scene);
 //        primaryStage.show();
 
+        TableIO tableIO = DataBaseManager.localEditor(TableIO::new);
+        tableIO.use("bla bla");
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ui/view/MainScene.fxml"));
-            BorderPane main  = loader.load();
+            BorderPane main = loader.load();
             // Show the scene containing the root layout.
             Scene scene = new Scene(main);
             primaryStage.setTitle("Maestro");
@@ -88,7 +92,6 @@ public class Main extends Application {
         }
 
     }
-
 
     public static void main(String[] args) {
         launch(args);

@@ -1,11 +1,16 @@
 package com.beloghos.dev.maestro.Job;
 
+import com.beloghos.dev.maestro.Database.DataBaseManager;
+import com.beloghos.dev.maestro.Database.TableIO;
+
 import java.util.Comparator;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class Worker {
+
+    // TODO: 12/08/2019 https://stackoverflow.com/questions/32498307/in-javafx-is-an-observablearraylist-thread-safe
 
     /**
      * for reference visit https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ThreadPoolExecutor.html
