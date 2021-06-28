@@ -1,5 +1,5 @@
 # Maestro
-A desktop program made to help making the radio broadcast of Beloghos Team in Elkedeseen Church. This is the first incomplete version built with Java & Javafx, the new version is bieng built with Node.js, Electron.js and React.js
+A desktop program that would help making the radio broadcast of Beloghos Team in Elkedeseen Church. This is the first incomplete version built with Java & Javafx, the new version is bieng built with Node.js, Electron.js and React.js
 
 To edit learn first:
 
